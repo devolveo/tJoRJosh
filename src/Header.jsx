@@ -11,10 +11,9 @@ function Header() {
   return (
     <header>
       <a href="">Kaboom</a>
-
-      <div>
+      <nav role="navigation" aria-label="Main menu">
         <button className={styles.hamburgerBtn} onClick={toggleIsMenuOpen}>
-          <Menu />
+          <Menu aria-hidden="true" focusable="false" />
         </button>
         {isMenuOpen && (
           <Drawer handleDismiss={toggleIsMenuOpen}>
@@ -34,7 +33,7 @@ function Header() {
             </ul>
           </Drawer>
         )}
-      </div>
+      </nav>
     </header>
   );
 }
